@@ -28,6 +28,6 @@ This is a GPIO IP which is in complaince with the AMBA APB protocol. Our design 
     
 ```
 # Compatibility
-
+This IP is compatible with Modelsim.
 
 ### Note: Work in progress...
