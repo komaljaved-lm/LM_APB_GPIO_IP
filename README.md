@@ -1,5 +1,5 @@
 # GPIO
-This is a GPIO IP which is in complaince with the AMBA APB protocol. Our design contains 32 configurable GPIO pins. 
+AMBA APB Compliant GPIO. Our design contains 32 configurable GPIO pins. 
 
 # Features
 * GPIOs IP follows AMBA APB protocol
