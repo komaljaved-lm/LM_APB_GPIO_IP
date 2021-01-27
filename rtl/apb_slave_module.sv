@@ -10,7 +10,6 @@ input logic PCLK,
 	 input logic [`ADDR_WIDTH-1 : 0]PADDR,
 //-----GPIO SIGNALS ---------
 	input		logic [`DATA_WIDTH-1 : 0]		gpio_rdata,
-	input		logic 							gpio_ready,
 	input		logic 							gpio_error,
 //-----------------------------------------------------------------------------
 	output	logic 								gpio_wr_en,
@@ -23,9 +22,7 @@ input logic PCLK,
 	 output logic 								PSLVERR
 );
 
-	logic wait_;	
-	assign wait_=0;	
-	
+
 	assign gpio_reg_addr   = PADDR;
 	assign gpio_wdata	   = PWDATA;
 	assign gpio_strb	   = PSTRB;	
@@ -39,14 +36,14 @@ input logic PCLK,
 				PRDATA		={`DATA_WIDTH{1'b0}};	
 		end
 		else if (PSELx && PENABLE) begin
-			if(~wait_ && PWRITE) begin // Check for write operation
+			if(PWRITE) begin // Check for write operation
 				gpio_rd_en		=1'b0;
 				gpio_wr_en		=1'b1;
 				PREADY 			=1'b1;
 				PSLVERR 		=gpio_error;
 				PRDATA			=gpio_rdata;	
 			end
-			else if(~wait_ && ~PWRITE) begin //Check for read operation
+			else if(~PWRITE) begin //Check for read operation
 				gpio_rd_en		=1'b1;
 				gpio_wr_en		=1'b0;
 				PREADY			=1'b1;

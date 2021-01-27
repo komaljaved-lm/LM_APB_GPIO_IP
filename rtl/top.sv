@@ -25,13 +25,12 @@ module top_GPIO_APBSlave (
 );
 
 	logic [`DATA_WIDTH-1 : 0]		gpio_rdata;
-	logic 							gpio_ready;
-	logic 							gpio_error;
-	logic 							gpio_wr_en;
-	logic 							gpio_rd_en;
+	logic 					gpio_error;
+	logic 					gpio_wr_en;
+	logic 					gpio_rd_en;
 	logic [`ADDR_WIDTH-1 : 0]		gpio_reg_addr;
 	logic [`DATA_WIDTH-1 : 0]		gpio_wdata;
-	logic [(`DATA_WIDTH/8)-1 : 0]	gpio_strb;
+	logic [(`DATA_WIDTH/8)-1 : 0]		gpio_strb;
 
 //Slave  and GPIO Instance
 	apb_slave	mod_1(.*);

@@ -10,7 +10,6 @@ module gpio
 	input	logic [(`DATA_WIDTH/8)-1 : 0]	gpio_strb,
 	
 	output	logic [`DATA_WIDTH-1 : 0]	gpio_rdata,
-	output  logic 						gpio_ready,
 	output  logic 						gpio_error,
 	inout 	wire  	GPIO_pins [(`DATA_WIDTH-1):0]
 );	
