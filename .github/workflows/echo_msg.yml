@@ -45,6 +45,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Checks the RTL synthesizability
         run: |
+          sudo apt install yosys
           echo starting yosys
           yosys ./scripts/yosys_script.ys && echo Synthesis is successful
 
