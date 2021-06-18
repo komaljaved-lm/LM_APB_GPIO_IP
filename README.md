@@ -29,6 +29,5 @@ AMBA APB Compliant GPIO. Our design contains 32 configurable GPIO pins.
 ```
 # Compatibility
 This IP is compatible with Modelsim.
-check
 
 
