@@ -1,0 +1,11 @@
+read_verilog top.sv
+
+hierarchy -check -top top_GPIO_APBSlave
+
+proc; opt; fsm; opt; memory; opt; techmap; opt
+
+dfflibmap -liberty cells.lib 
+
+clean
+
+write_verilog gpio.v

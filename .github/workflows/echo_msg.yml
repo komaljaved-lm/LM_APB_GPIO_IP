@@ -47,5 +47,5 @@ jobs:
       - name: Checks the RTL synthesizability
         run: |
           echo starting yosys
-          yosys ../scrpis/yosys_script.ys && echo Synthesis is successful
+          yosys ./scripts/yosys_script.ys && echo Synthesis is successful
 
