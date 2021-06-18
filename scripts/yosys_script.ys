@@ -1,4 +1,4 @@
-read_verilog ../rtl/top.sv
+read_verilog ./rtl/top.sv
 
 hierarchy -check -top top_GPIO_APBSlave
 
